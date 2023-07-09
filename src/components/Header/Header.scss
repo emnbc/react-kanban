@@ -1,0 +1,21 @@
+$mobile: 576px;
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    &__title {
+        font-size: 28px;
+        font-weight: 400;
+    }
+
+    @media screen and (max-width: $mobile) {
+        justify-content: flex-end;
+
+        &__title {
+            display: none;
+        }
+    }
+}

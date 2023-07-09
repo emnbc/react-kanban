@@ -1,0 +1,54 @@
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+
+    &__icon {
+        line-height: 0.6;
+
+        img {
+            background-color: #ffffff;
+            border-radius: 50%;
+            
+        }
+    }
+
+    &__arrow {
+        transform: rotate(0);
+        cursor: pointer;
+
+        &.opend {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__menu {
+        position: absolute;
+        min-width: 140px;
+        padding: 8px;
+        top: 50px;
+        right: 0;
+        background-color: #ffffff;
+        border-radius: 5px;
+        color: #000000;
+        z-index: 1;
+
+        ul {
+            list-style: none;
+
+            li {
+                font-size: 14px;
+                padding: 4px;
+                border-radius: 5px;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: #EBECF0;
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,22 @@
+.task-form {
+
+    &__add-btn {
+        font-family: 'Roboto', sans-serif;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        padding: 4px;
+        background-color: transparent;
+        color: #5E6C84;
+
+        &:hover:not(:disabled) {
+            background-color: #ffffff;
+            cursor: pointer;
+        }
+    }
+
+    &__input {
+        width: 100%;
+        margin-bottom: 16px;
+    }
+}
