@@ -9,7 +9,9 @@ export const TaskForm = (props) => {
 
   const tasks = useTasks();
 
-  const addTask = () => {
+  const addTask = (event) => {
+    event.preventDefault();
+
     if (inputText) {
       tasks.addNewTask(inputText);
       setInputText("");
@@ -43,16 +45,16 @@ export const TaskForm = (props) => {
   };
 
   const newTask = (
-    <div>
+    <form onSubmit={(e) => addTask(e)}>
       <input
         className="task-form__input form-input"
         type="text"
         onInput={(e) => setInputText(e.target.value)}
       />
-      <button className="form-btn" onClick={addTask}>
+      <button className="form-btn" type="submit">
         Submit
       </button>
-    </div>
+    </form>
   );
 
   const newStatus = (
@@ -68,7 +70,7 @@ export const TaskForm = (props) => {
           </option>
         ))}
       </select>
-      <button className="form-btn" onClick={changeStatus}>
+      <button className="form-btn" onClick={changeStatus} type="button">
         Submit
       </button>
     </div>
@@ -87,6 +89,7 @@ export const TaskForm = (props) => {
           disabled={isAddBtnDisabled()}
           className="task-form__add-btn"
           onClick={() => setIsActive(true)}
+          type="button"
         >
           + Add card
         </button>
